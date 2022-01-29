@@ -23,22 +23,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url();?>">Ci APP</a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>">Ci APP</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo base_url();?>">Home<span class="sr-only">(current)</span></a></li>
-                <li ><a href="<?php echo base_url();?>/users/register">Register<span class="sr-only">(current)</span></a></li>
-                    </ul>
+                <li class="active"><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="<?php echo base_url(); ?>users/register">Register<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-
+            </li>
+            </ul>
+            <?php if ($this->session->userdata('logged_in')): ?>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                    </ul>
-                </li>
+
+
+                    <li><a href="<?php echo base_url(); ?>users/logout">Logout</a></li>
+
+
+            </ul>
+            <?php endif; ?>
+            </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
