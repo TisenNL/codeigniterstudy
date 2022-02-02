@@ -31,6 +31,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a>
                 </li>
+                <li><a href="<?php echo base_url(); ?>projects">Projects<span class="sr-only">(current)</span></a>
+                </li>
                 <li><a href="<?php echo base_url(); ?>users/register">Register<span class="sr-only">(current)</span></a>
                 </li>
             </ul>

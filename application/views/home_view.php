@@ -21,4 +21,31 @@
 
 </p>
 
-<h1>Hello this is a view</h1>
+<div class="jumbotron">
+    <h2 class="text-center">Welcome to the CI APP</h2>
+</div>
+
+<?php if (isset($projects)): ?>
+    <h1>Projects</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                Project Name
+            </th>
+            <th>
+                Project Description
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($projects as $project): ?>
+            <tr>
+                <td><?php echo $project->project_name; ?></td>
+                <td><?php echo $project->project_body; ?></td>
+                <td><a href="<?php echo base_url(); ?>projects">View</a></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>
