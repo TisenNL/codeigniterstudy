@@ -9,8 +9,8 @@
         <?php echo $this->session->flashdata('project_updated'); ?>
     <?php endif; ?>
 
-    <?php if ($this->session->flashdata('project_deleted')): ?>
-        <?php echo $this->session->flashdata('project_deleted'); ?>
+    <?php if ($this->session->flashdata('task_updated')): ?>
+        <?php echo $this->session->flashdata('task_updated'); ?>
     <?php endif; ?>
 </p>
 
