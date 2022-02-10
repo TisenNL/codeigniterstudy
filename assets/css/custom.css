@@ -1,0 +1,12 @@
+.container {
+    background: url(../images/_bg_1.jpg);
+}
+
+.jumbotron {
+    border: 2px dashed black;
+    background-color: #fff;
+}
+
+.table-bordered {
+    border: 3px dashed #fff;
+}
