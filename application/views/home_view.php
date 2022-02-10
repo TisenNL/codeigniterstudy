@@ -49,3 +49,28 @@
         </tbody>
     </table>
 <?php endif; ?>
+
+<?php if (isset($tasks)): ?>
+    <h1>Tasks</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                Task Name
+            </th>
+            <th>
+                Task Description
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($tasks as $task): ?>
+            <tr>
+                <td><?php echo $task->task_name; ?></td>
+                <td><?php echo $task->task_body; ?></td>
+                <td><a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>">View</a></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>
