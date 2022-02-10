@@ -49,7 +49,7 @@ class Project_model extends CI_Model
         return $get_data->row();
     }
 
-    public function get_project_tasks($project_id, $active = true)
+    public function get_project_tasks($project_id, $status)
     {
         $this->db->select('
             tasks.task_name,
@@ -62,10 +62,10 @@ class Project_model extends CI_Model
         $this->db->join('projects', 'projects.id = tasks.project_id');
         $this->db->where('tasks.project_id', $project_id);
 
-        if ($active == true) {
-            $this->db->where('tasks.status', 0);
-        } else {
+        if ($status == true) {
             $this->db->where('tasks.status', 1);
+        } else {
+            $this->db->where('tasks.status', 0);
         }
         $query = $this->db->get();
 
