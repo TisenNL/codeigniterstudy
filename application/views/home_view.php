@@ -26,51 +26,31 @@
 </div>
 
 <?php if (isset($projects)): ?>
-    <h1>Projects</h1>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>
-                Project Name
-            </th>
-            <th>
-                Project Description
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($projects as $project): ?>
-            <tr>
-                <td><?php echo $project->project_name; ?></td>
-                <td><?php echo $project->project_body; ?></td>
-                <td><a href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>">View</a></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h4>Projects</h4></div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <?php foreach ($projects as $project): ?>
+                    <li class="list-group-item">
+                        <a href="<?php echo base_url(); ?>projects/display/<?php echo $project->id; ?>"><?php echo $project->project_name; ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
 <?php endif; ?>
 
 <?php if (isset($tasks)): ?>
-    <h1>Tasks</h1>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>
-                Task Name
-            </th>
-            <th>
-                Task Description
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($tasks as $task): ?>
-            <tr>
-                <td><?php echo $task->task_name; ?></td>
-                <td><?php echo $task->task_body; ?></td>
-                <td><a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>">View</a></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h4>Tasks</h4></div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <?php foreach ($tasks as $task): ?>
+                    <li class="list-group-item">
+                        <a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->id; ?>"><?php echo $task->task_name; ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
 <?php endif; ?>

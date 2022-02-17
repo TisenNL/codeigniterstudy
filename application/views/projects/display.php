@@ -10,43 +10,61 @@
 </p>
 
 <div class="col-xs-9">
-    <h1>Project Name: <?php echo $project_data->project_name; ?></h1>
-    <p>Date Created: <?php echo $project_data->date_created; ?></p>
-    <h3>Description</h3>
-    <p><?php echo $project_data->project_body; ?></p>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Project Name: <?php echo $project_data->project_name; ?>
+                <small>Date Created: <?php echo $project_data->date_created; ?></small></h3>
+        </div>
+        <div class="panel-body">
+            <p>Description: <?php echo $project_data->project_body; ?></p>
+        </div>
+    </div>
 
-    <h3>Active Tasks</h3>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Active Tasks</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <?php if ($not_completed_tasks): ?>
+                    <?php foreach ($not_completed_tasks as $task): ?>
+                        <li class="list-group-item">
+                            <a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->task_id ?>">
+                                <?php echo $task->task_name; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li class="list-group-item">
+                        <p>You have not tasks pending</p>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
 
-    <ul>
-        <?php if ($not_completed_tasks): ?>
-            <?php foreach ($not_completed_tasks as $task): ?>
-                <li>
-                    <a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->task_id ?>">
-                        <?php echo $task->task_name; ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>You have not tasks pending</p>
-        <?php endif; ?>
-    </ul>
-
-    <h3>Completed Tasks</h3>
-
-    <ul>
-        <?php if ($completed_tasks): ?>
-            <?php foreach ($completed_tasks as $task): ?>
-                <li>
-                    <a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->task_id ?>">
-                        <?php echo $task->task_name; ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>You have not completed tasks</p>
-        <?php endif; ?>
-    </ul>
-
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h4>Completed Tasks</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <?php if ($completed_tasks): ?>
+                    <?php foreach ($completed_tasks as $task): ?>
+                        <li class="list-group-item">
+                            <a href="<?php echo base_url(); ?>tasks/display/<?php echo $task->task_id ?>">
+                                <?php echo $task->task_name; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li class="list-group-item">
+                        <p>You have not completed tasks</p>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
 
 </div>
 
