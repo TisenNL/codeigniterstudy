@@ -10,3 +10,10 @@
 .table-bordered {
     border: 3px dashed #fff;
 }
+
+.task-description {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 1px;
+}

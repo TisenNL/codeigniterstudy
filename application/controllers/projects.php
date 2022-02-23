@@ -66,7 +66,7 @@ class Projects extends CI_Controller
             );
             if ($this->project_model->edit_project($project_id, $data)) {
                 $this->session->set_flashdata('project_updated', 'Your project has been updated');
-                redirect('projects/index');
+                redirect('projects/display/'. $project_id .'');
             }
         }
     }
@@ -76,7 +76,7 @@ class Projects extends CI_Controller
         $this->project_model->delete_project_tasks($project_id);
         $this->project_model->delete_project($project_id);
         $this->session->set_flashdata('project_deleted', 'Your Project has been deleted');
-        redirect("projects/index");
+        redirect('projects/display/'. $project_id .'');
     }
 }
 

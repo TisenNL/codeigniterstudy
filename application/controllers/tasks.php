@@ -28,7 +28,7 @@ class Tasks extends CI_Controller
             );
             if ($this->task_model->create_task($data)) {
                 $this->session->set_flashdata('task_created', 'Your task has been created');
-                redirect('projects/index');
+                redirect('projects/display/'. $project_id .'');
             }
         }
     }
@@ -55,7 +55,7 @@ class Tasks extends CI_Controller
             );
             if ($this->task_model->edit_task($task_id, $data)) {
                 $this->session->set_flashdata('task_updated', 'Your task has been updated');
-                redirect('projects/index');
+                redirect('projects/display/'. $project_id .'');
             }
         }
     }
